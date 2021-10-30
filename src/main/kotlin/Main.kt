@@ -8,12 +8,9 @@ import org.jetbrains.exposed.sql.StdOutSqlLogger
 import org.jetbrains.exposed.sql.addLogger
 import org.jetbrains.exposed.sql.transactions.transaction
 
-fun main(args: Array<String>) {
+fun main() {
     //an example connection to H2 DB
-    Database.connect(
-        "jdbc:postgresql://localhost:8080/test", driver = "org.postgresql.Driver",
-        user = "root", password = "your_pwd"
-    )
+    Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
 
     transaction {
         // print sql to std-out
@@ -22,7 +19,7 @@ fun main(args: Array<String>) {
         SchemaUtils.create(Cities)
 
         // insert new city. SQL: INSERT INTO Cities (name) VALUES ('St. Petersburg')
-        val stPete = City.new {
+        City.new {
             name = "St. Petersburg"
         }
 
