@@ -1,6 +1,9 @@
 import org.jetbrains.exposed.dao.id.IntIdTable
+import org.jetbrains.exposed.sql.transactions.transaction
 
-fun main() {}
+fun main() {
+    transaction { }
+}
 
 object Users : IntIdTable("user")
 
