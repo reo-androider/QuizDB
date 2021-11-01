@@ -1,8 +1,11 @@
 import org.jetbrains.exposed.dao.id.IntIdTable
 import org.jetbrains.exposed.sql.transactions.transaction
+import java.beans.EventHandler.create
 
 fun main() {
-    transaction { }
+    transaction {
+        create(Users, Questions, Mistakes, Chapters)
+    }
 }
 
 object Users : IntIdTable("user")
