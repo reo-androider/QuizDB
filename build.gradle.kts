@@ -18,7 +18,7 @@ val h2: String by project
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
-    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
+    implementation("org.jetbrains.exposed:exposed-model.dao:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
     implementation("org.postgresql:postgresql:$psql")
     implementation("com.h2database:h2:$h2")
