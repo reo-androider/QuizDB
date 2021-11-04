@@ -11,7 +11,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 fun main() {
     Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
     transaction {
-        create(Users, Questions, Mistakes, Chapters)
         addLogger(StdOutSqlLogger)
+        create(Users, Questions, Mistakes, Chapters)
     }
 }
