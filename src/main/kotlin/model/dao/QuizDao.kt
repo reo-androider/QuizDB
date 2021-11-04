@@ -1,5 +1,4 @@
 import model.table.Chapters
-import model.table.Mistakes
 import model.table.Questions
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
@@ -14,11 +13,6 @@ class Question(id: EntityID<Int>) : IntEntity(id) {
     var chapterId by Chapter referencedOn Questions.chapterId
 }
 
-class Mistake(id: EntityID<Int>) : IntEntity(id) {
-    companion object : IntEntityClass<Mistake>(Mistakes)
-
-    var userId by User referencedOn Mistakes.userId
-}
 
 class Chapter(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<Chapter>(Chapters)
