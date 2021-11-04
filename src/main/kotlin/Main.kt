@@ -6,6 +6,7 @@ import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils.create
 import org.jetbrains.exposed.sql.StdOutSqlLogger
 import org.jetbrains.exposed.sql.addLogger
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun main() {
@@ -13,5 +14,6 @@ fun main() {
     transaction {
         addLogger(StdOutSqlLogger)
         create(Users, Questions, Mistakes, Chapters)
+        Users.selectAll()
     }
 }

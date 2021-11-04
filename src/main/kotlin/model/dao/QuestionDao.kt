@@ -1,6 +1,5 @@
 package model.dao
 
-import Chapter
 import model.table.Questions
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass

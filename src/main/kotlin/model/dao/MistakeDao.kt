@@ -9,4 +9,5 @@ class Mistake(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<Mistake>(Mistakes)
 
     var userId by User referencedOn Mistakes.userId
+    var questionId by Question referencedOn Mistakes.questionId
 }
