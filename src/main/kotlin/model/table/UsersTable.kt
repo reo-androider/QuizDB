@@ -1,4 +1,4 @@
-package model.dao
+package model.table
 
 import org.jetbrains.exposed.dao.id.IntIdTable
 
