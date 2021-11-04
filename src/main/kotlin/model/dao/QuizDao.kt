@@ -1,3 +1,7 @@
+import model.table.Chapters
+import model.table.Mistakes
+import model.table.Questions
+import model.table.Users
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID

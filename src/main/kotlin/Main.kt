@@ -1,21 +1,17 @@
-import org.jetbrains.exposed.dao.id.IntIdTable
+import model.table.Chapters
+import model.table.Mistakes
+import model.table.Questions
+import model.table.Users
+import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils.create
+import org.jetbrains.exposed.sql.StdOutSqlLogger
+import org.jetbrains.exposed.sql.addLogger
+import org.jetbrains.exposed.sql.transactions.transaction
 
-fun main() {}
-
-object Users : IntIdTable("user")
-
-object Questions : IntIdTable() {
-    val word = varchar("word", 4)
-    val answer = varchar("answer", 4)
-    val description = varchar("description", 20)
-    val chapterId = reference("chapterId", Chapters)
-}
-
-object Mistakes : IntIdTable() {
-    val userId = reference("userId", Users)
-}
-
-object Chapters : IntIdTable() {
-    val title = varchar("title", 10)
-    val count = integer("count")
+fun main() {
+    Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
+    transaction {
+        addLogger(StdOutSqlLogger)
+        create(Users, Questions, Mistakes, Chapters)
+    }
 }

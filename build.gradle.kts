@@ -15,13 +15,15 @@ repositories {
 val exposedVersion: String by project
 val psql: String by project
 val h2: String by project
+val slf4f: String by project
 dependencies {
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
     implementation("org.postgresql:postgresql:$psql")
     implementation("com.h2database:h2:$h2")
+    implementation("org.slf4j:slf4j-simple:$slf4f")
 }
 
 tasks.test {
