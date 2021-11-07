@@ -1,4 +1,3 @@
-import io.ktor.application.*
 import model.table.Chapters
 import model.table.Mistakes
 import model.table.Questions
@@ -11,7 +10,6 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun main() {
-    application.call
     Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
     transaction {
         addLogger(StdOutSqlLogger)
