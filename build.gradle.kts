@@ -32,7 +32,6 @@ dependencies {
     implementation("io.ktor:ktor-client-core-jvm:$kotlinVersion")
     implementation("io.ktor:ktor-client-apache:$kotlinVersion")
     testImplementation("io.ktor:ktor-server-tests:$kotlinVersion")
-    implementation("ch.qos.logback:logback-classic:$logBack")
 }
 
 tasks.test {

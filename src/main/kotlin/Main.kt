@@ -1,3 +1,9 @@
+import io.ktor.application.*
+import io.ktor.http.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 import model.table.Chapters
 import model.table.Mistakes
 import model.table.Questions
@@ -10,6 +16,13 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun main() {
+    val server = embeddedServer(Netty, port = 8080) {
+        routing {
+            get("/") {
+                call.respondText("quizData", ContentType.Text.Plain)
+            }
+        }
+    }
     Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
     transaction {
         addLogger(StdOutSqlLogger)
