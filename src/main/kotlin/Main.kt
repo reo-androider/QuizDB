@@ -16,17 +16,17 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun main() {
+    Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
+    transaction {
+        addLogger(StdOutSqlLogger)
+        create(Users, Questions, Mistakes, Chapters)
+        val userList = Users.selectAll()
+    }
     val server = embeddedServer(Netty, port = 8080) {
         routing {
             get("/") {
                 call.respondText("quizData", ContentType.Text.Plain)
             }
         }
-    }
-    Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
-    transaction {
-        addLogger(StdOutSqlLogger)
-        create(Users, Questions, Mistakes, Chapters)
-        Users.selectAll()
     }
 }
