@@ -17,6 +17,7 @@ val psql: String by project
 val h2: String by project
 val slf4f: String by project
 val kotlinVersion: String by project
+val logBack: String by project
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")

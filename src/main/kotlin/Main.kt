@@ -1,3 +1,6 @@
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 import model.table.Chapters
 import model.table.Mistakes
 import model.table.Questions
@@ -14,6 +17,12 @@ fun main() {
     transaction {
         addLogger(StdOutSqlLogger)
         create(Users, Questions, Mistakes, Chapters)
-        Users.selectAll()
+        val userList = Users.selectAll()
     }
+    val server = embeddedServer(Netty, port = 8080) {
+        routing {
+        
+        }
+    }
+    server.start()
 }
