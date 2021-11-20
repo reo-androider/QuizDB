@@ -8,4 +8,7 @@ fun Route.userController() {
     get("/user") {
         call.respondText { "user routing ok" }
     }
+    post {
+
+    }
 }
