@@ -5,8 +5,11 @@ import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import model.deserialize.CreateUserAccount
+import service.UserService
 
 fun Route.userController() {
+    val userService = UserService()
+    
     get("/user") {
         call.respondText { "user routing ok" }
     }
