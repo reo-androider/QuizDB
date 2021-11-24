@@ -9,11 +9,12 @@ import service.UserService
 
 fun Route.userController() {
     val userService = UserService()
-    
+
     get("/user") {
         call.respondText { "user routing ok" }
     }
     post {
         val request = call.receive<CreateUserAccount>()
+        userService.createAccount(request.name, request.mail)
     }
 }
