@@ -1,6 +1,7 @@
 package controller
 
 import io.ktor.application.*
+import io.ktor.http.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
@@ -16,5 +17,6 @@ fun Route.userController() {
     post {
         val request = call.receive<CreateUserAccount>()
         userService.createAccount(request.name, request.mail)
+        call.respond(HttpStatusCode.OK)
     }
 }
