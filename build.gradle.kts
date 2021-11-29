@@ -5,7 +5,11 @@ plugins {
     application
 }
 
-buildscript {}
+buildscript {
+    dependencies {
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.28-alpha")
+    }
+}
 
 group = "me.reoru"
 version = "1.0-SNAPSHOT"
