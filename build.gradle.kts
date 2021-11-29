@@ -5,6 +5,8 @@ plugins {
     application
 }
 
+buildscript {}
+
 group = "me.reoru"
 version = "1.0-SNAPSHOT"
 
