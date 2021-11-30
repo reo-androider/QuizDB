@@ -5,12 +5,6 @@ plugins {
     application
 }
 
-buildscript {
-    dependencies {
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.28-alpha")
-    }
-}
-
 group = "me.reoru"
 version = "1.0-SNAPSHOT"
 
@@ -38,6 +32,7 @@ dependencies {
     implementation("io.ktor:ktor-client-core-jvm:$kotlinVersion")
     implementation("io.ktor:ktor-client-apache:$kotlinVersion")
     testImplementation("io.ktor:ktor-server-tests:$kotlinVersion")
+    implementation("com.google.dagger:hilt-android:2.28-alpha")
 }
 
 tasks.test {
