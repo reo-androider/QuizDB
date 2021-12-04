@@ -12,7 +12,6 @@ repositories {
     mavenCentral()
 }
 
-val psql: String by project
 val h2: String by project
 val slf4f: String by project
 val kotlinVersion: String by project
@@ -24,6 +23,8 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+
+    val psql: String by project
     implementation("org.postgresql:postgresql:$psql")
     implementation("com.h2database:h2:$h2")
     implementation("org.slf4j:slf4j-simple:$slf4f")
