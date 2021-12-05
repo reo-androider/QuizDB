@@ -12,7 +12,6 @@ repositories {
     mavenCentral()
 }
 
-val h2: String by project
 val slf4f: String by project
 val kotlinVersion: String by project
 val logBack: String by project
@@ -26,6 +25,8 @@ dependencies {
 
     val psql: String by project
     implementation("org.postgresql:postgresql:$psql")
+
+    val h2: String by project
     implementation("com.h2database:h2:$h2")
     implementation("org.slf4j:slf4j-simple:$slf4f")
     implementation("io.ktor:ktor-server-netty:$kotlinVersion")
