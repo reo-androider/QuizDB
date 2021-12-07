@@ -12,7 +12,6 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion: String by project
 val logBack: String by project
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
@@ -30,6 +29,8 @@ dependencies {
 
     val slf4f: String by project
     implementation("org.slf4j:slf4j-simple:$slf4f")
+
+    val kotlinVersion: String by project
     implementation("io.ktor:ktor-server-netty:$kotlinVersion")
     implementation("io.ktor:ktor-server-core:$kotlinVersion")
     implementation("io.ktor:ktor-client-core:$kotlinVersion")
