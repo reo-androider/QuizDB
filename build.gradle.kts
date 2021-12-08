@@ -12,7 +12,6 @@ repositories {
     mavenCentral()
 }
 
-val logBack: String by project
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
 
