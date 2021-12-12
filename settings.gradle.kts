@@ -1,5 +1,6 @@
 pluginManagement {
     plugins {
+        id("kotlin-kapt")
     }
     resolutionStrategy {
     }
