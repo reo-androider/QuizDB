@@ -13,6 +13,8 @@ repositories {
     google()
 }
 
+buildscript { }
+
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
 
