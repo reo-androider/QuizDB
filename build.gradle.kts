@@ -13,7 +13,12 @@ repositories {
     google()
 }
 
-buildscript { }
+buildscript {
+    dependencies {
+        val hiltVersion: String by project
+        classpath("com.google.dagger:hilt-android-gradle-plugin:$hiltVersion")
+    }
+}
 
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
