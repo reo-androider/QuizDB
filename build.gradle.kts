@@ -9,8 +9,9 @@ group = "me.reoru"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
     google()
+    jcenter()
+    maven { setUrl("https://maven.google.com") }
 }
 
 buildscript {
@@ -47,6 +48,10 @@ dependencies {
 
     val hiltVersion: String by project
     implementation("com.google.dagger:hilt-android:$hiltVersion")
+
+    val activityVersion: String by project
+    implementation("androidx.activity:activity:$activityVersion")
+    testImplementation("androidx.activity:activity:$activityVersion")
 }
 
 tasks.test {
