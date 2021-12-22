@@ -10,7 +10,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     google()
-    jcenter()
+    mavenCentral()
     maven { setUrl("https://maven.google.com") }
 }
 
