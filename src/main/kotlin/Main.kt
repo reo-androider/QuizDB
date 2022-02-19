@@ -1,4 +1,6 @@
 import controller.userController
+import io.ktor.application.*
+import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
@@ -12,6 +14,7 @@ import org.jetbrains.exposed.sql.StdOutSqlLogger
 import org.jetbrains.exposed.sql.addLogger
 import org.jetbrains.exposed.sql.transactions.transaction
 
+
 fun main() {
     Database.connect("jdbc:h2:mem:test", driver = "org.h2.Driver")
     transaction {
@@ -21,6 +24,9 @@ fun main() {
     val server = embeddedServer(Netty, port = 8080) {
         routing {
             userController()
+            get("/test") {
+                call.respond("success!")
+            }
         }
     }
 }
