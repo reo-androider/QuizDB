@@ -24,8 +24,8 @@ fun main() {
     val server = embeddedServer(Netty, port = 8080) {
         routing {
             userController()
-            get("/test") {
-                call.respond("success!")
+            get("/") {
+                call.respondText("success!")
             }
         }
     }
