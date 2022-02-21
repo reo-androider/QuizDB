@@ -42,6 +42,10 @@ tasks.withType<KotlinCompile>() {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+tasks.create("stage") {
+    dependsOn("installDist")
+}
+
 application {
     mainClass.set("MainKt")
 }
